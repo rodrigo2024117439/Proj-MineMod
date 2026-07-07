@@ -10,7 +10,7 @@ import net.minecraft.world.item.BlockItem;
 
 public class ItemInit {
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "modrpg");
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "dianthus");
 
     public static final RegistryObject<Item> ACOLITE=ITEMS.register("acolite", ()->criarMinerio("acolite"));
     public static final RegistryObject<Item> ACOLITE_ORE = ITEMS.register("acolite_ore",

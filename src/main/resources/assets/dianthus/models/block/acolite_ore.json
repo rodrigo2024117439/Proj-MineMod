@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "modrpg:block/acolite_ore"
+    "all": "dianthus:block/acolite_ore"
   }
 }

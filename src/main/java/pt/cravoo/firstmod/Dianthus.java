@@ -26,10 +26,10 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(ModRpg.MODID)
-public final class ModRpg {
+@Mod(Dianthus.MODID)
+public final class Dianthus {
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "modrpg";
+    public static final String MODID = "dianthus";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     // Create a Deferred Register to hold Blocks which will all be registered under the "examplemod" namespace
@@ -64,15 +64,8 @@ public final class ModRpg {
         )
     );
 
-    // Creates a creative tab with the id "examplemod:example_tab" for the example item, that is placed after the combat tab
-    public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
-            .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> EXAMPLE_ITEM.get().getDefaultInstance())
-            .displayItems((_, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-            }).build());
 
-    public ModRpg(FMLJavaModLoadingContext context) {
+    public Dianthus(FMLJavaModLoadingContext context) {
         var modBusGroup = context.getModBusGroup();
 
         // Register the commonSetup method for modloading
@@ -87,9 +80,11 @@ public final class ModRpg {
 
         pt.cravoo.firstmod.core.init.ItemInit.ITEMS.register(modBusGroup);
         pt.cravoo.firstmod.core.init.BlockInit.BLOCKS.register(modBusGroup);
+        pt.cravoo.firstmod.core.init.CreativeTabInit.TABS.register(modBusGroup);
+
 
         // Register the item to a creative tab
-        BuildCreativeModeTabContentsEvent.BUS.addListener(ModRpg::addCreative);
+        BuildCreativeModeTabContentsEvent.BUS.addListener(Dianthus::addCreative);
 
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us
         context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

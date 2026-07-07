@@ -8,14 +8,17 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class BlockInit {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "modrpg");
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "dianthus");
 
     public static final RegistryObject<Block> ACOLITE_ORE_BLOCK = BLOCKS.register("acolite_ore",
-            () -> oreBlocks("acolite_ore")
+            () -> oreBlocksEqualIron("acolite_ore")
+
     );
 
-    public static Block oreBlocks(String id) {
+    public static Block oreBlocksEqualIron(String id) {
         return new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)
+                .requiresCorrectToolForDrops()
+                .strength(3.0f, 3.0f)
                 .setId(BLOCKS.key(id)));
     }
 }
