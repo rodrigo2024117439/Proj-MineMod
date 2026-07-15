@@ -22,6 +22,9 @@ public class CreativeTabInit {
                     .displayItems((parameters, output) -> {
                         output.accept(ItemInit.ACOLITE.get());
                         output.accept(ItemInit.ACOLITE_ORE.get());
+                        output.accept(ItemInit.SILVER_ORE.get());
+                        output.accept(ItemInit.RAW_SILVER.get());
+                        output.accept(ItemInit.SILVER_INGOT.get());
                     })
                     .build()
     );

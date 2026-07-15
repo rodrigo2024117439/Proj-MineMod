@@ -12,8 +12,9 @@ public class BlockInit {
 
     public static final RegistryObject<Block> ACOLITE_ORE_BLOCK = BLOCKS.register("acolite_ore",
             () -> oreBlocksEqualIron("acolite_ore")
-
     );
+
+    public static final RegistryObject<Block> SILVER_ORE_BLOCK=BLOCKS.register("silver_ore", ()->oreBlocksEqualIron("silver_ore"));
 
     public static Block oreBlocksEqualIron(String id) {
         return new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.STONE)

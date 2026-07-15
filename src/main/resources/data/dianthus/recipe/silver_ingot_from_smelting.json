@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "dianthus:raw_silver",
+  "result": {
+    "id": "dianthus:silver_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

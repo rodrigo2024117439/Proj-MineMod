@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "dianthus:acolite_ore"
+    "dianthus:acolite_ore",
+    "dianthus:silver_ore"
   ]
 }
